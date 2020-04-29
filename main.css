@@ -45,8 +45,16 @@ a {
 .storage-buttons {
   margin-top: 2rem;
   color: #1d3557;
+  text-decoration: underline;
+  cursor: pointer;
 }
-  
+
+#save {
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+
 .storage-buttons a:first-of-type,
 #save a:first-of-type,
 .title a:first-of-type {
