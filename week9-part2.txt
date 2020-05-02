@@ -11,7 +11,7 @@ Week 9 Part 2
 
 3. What are 3 advantages of using the Web Storage API over cookies?
 
--
+- The advantages of using the Web Storage API over cookies are: web storage is more secure, large amounts of. Data can be store locally, and information is never transferred to the server.
 
 4. What are the two objects called for storing data on the client that HTML5 Web Storage provides?
 
@@ -46,29 +46,52 @@ Week 9 Part 2
 11. The Storage Object, represented by the localStorage and sessionStorage objects, contains one property. What is that property called and what does it return? Use your project application to describe what this property does.
 
 - The Storage Object, represented by the localStorage and sessionStorage objects contains storage.length, the length property which returns an integer representing the number of data items stored in the Storage object.
+
 - Project application example:
+
+ Syntax:
+
+   let aLength = storage.length;
+
+
+   Return value: an integer.
+
+   Code example:
+function populateStorage() {
+    localStorage.setItem('color', 'blue');
+    localStorage.setItem('font', 'Arial');
+    localStorage.setItem('image', 'plants.png');
+
+    localStorage.length; // Should return 3
+}
+
 
 12. Give me the five Storage methods of the Web Storage API and describe what each does. When applicable, use code from your project application as examples.
 
 - Method 1: Storage.key() - when this is passed a certain number represented by n, this method returns the name of the nth key in the storage. The order of keys is user-agent defined, so it's not reliable.
 
-Example:
+Example: console.log(localStorage.getItem(localStorage.key(i)));
 
 - Method 2: Storage.getItem() - when this method is passed a key name, it will return that key's value, or null if the key does not exist.
 
-Example:
+Example: (sessionStorage.getItem('autosave', myStory))
 
 - Method 3: Storage.setItem() - when passed a key name and value, it will add that key to the storage, or update that key's value if it already exists
 
-Example:
+Example: (sessionStorage.setItem('autosave', myStory));
 
 - Method 4: Storage.removeItem() - when passed a key name, it will remove that key from the storage. If there is no item associated with the given key, this method will do nothing.
 
-Example:
+Example: sessionStorage.removeItem('autosave', myStory.value);
 
 - Method 5: Storage.clear() - when invoked, will empty all keys out of the storage.
 
-Example: 
+Example: function clearStorage() {
+  const myStory = document.getElementById('textArea');
+  myStory.value = '';
+  sessionStorage.removeItem('autosave', myStory.value);
+}
+
 
 13. When using cookies, why would you want to use the Secure flag?
 
@@ -111,9 +134,14 @@ These are the differences between localStorage and sessionStorage.
 
 19. Describe what the value of the csv variable is and why it is important for our application.
 
-- The value of the css variable is 
+- The csv value is the result of the transformation of the javascript object into a string
 - This is important for our application so that we may insert the value, which is transferred into a string, into a .txt file for the user to download
+- It's also important because it lets us know whether the text has been saved or not
 
 
 20. Please copy and paste the result of the console.log(csv) after you have clicked on the Save Text To File For Download button. Hint: you should try this out only after you have completed building your application.
 
+I clicked on this link from Developer Tool's - blob:https://sohee-cho.github.io/30703a7c-4698-4aca-9baa-7d8943dbba3e
+
+This is the message I got:
+"Hi there! Use this text box to take notes and save as a text file! Click on 'Clear Storage' to begin."
